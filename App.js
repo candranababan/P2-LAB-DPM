@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      
+      <Text style={styles.text}>TAMPILAN DI TENGAH LAYAR</Text>
+
+      
+      <View style={styles.boxContainer}>
+        <View style={[styles.box, { backgroundColor: 'red' }]} /> 
+        <View style={[styles.box, { backgroundColor: 'green' }]} />
+      </View>
     </View>
   );
 }
@@ -13,8 +19,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#d3d3d3', 
+  },
+  text: {
+    fontSize: 24,
+    color: 'blue', 
+    fontWeight: 'bold', 
+    marginBottom: 50, 
+  },
+  boxContainer: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    width: '80%', 
+  },
+  box: {
+    width: 100, 
+    height: 100,
   },
 });
